@@ -1,0 +1,21 @@
+/**
+* @authorkwxos
+ * @create_at 2023-01-13
+ * @origin 
+* @title 买家秀
+* @platform qq wx tg pgm web
+* @rule 买家秀
+* @priority 100
+ * @public false
+* @description 买家秀。
+* @version v1.0.0
+*/
+
+const s = sender
+
+var { body } = request({
+    url: "https://api.vvhan.com/api/tao?type=json",
+    method: "get",
+    dataType: "json", //指定数据类型
+})
+ s.reply(`${body.title}${image(body.pic)}`)
