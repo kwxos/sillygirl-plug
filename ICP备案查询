@@ -1,0 +1,23 @@
+/**
+* @author kwxos
+ * @create_at 2023-01-13 20:43:00
+* @title ICP备案查询
+* @platform qq wx tg pgm web cron
+* @rule ICP ?
+* @rule ICP?
+* @priority 100
+ * @public false
+* @description ICP备案查询
+* @version v1.0.0
+*/
+
+//sender
+const s = sender
+
+var par = s.param(1)
+
+var txt = request({
+    url: "https://ovooa.com/API/icp/?type=text&url=" + par,
+}).body
+
+s.reply(txt)
