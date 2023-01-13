@@ -1,0 +1,23 @@
+/**
+* @author kwxos
+ * @create_at 2023-01-13 13:06:53
+ * @origin 
+* @title 笑话
+* @platform qq wx tg pgm web cron
+* @rule 笑话
+* @priority 100
+ * @public false
+* @description 随机笑话
+* @version v1.0.0
+
+//sender
+const s = sender
+
+//request 网络请求
+ var {body} = request({
+     url:"https://www.hlapi.cn/api/gxdz",
+     method:"get",
+     allowredirects: false, //禁止重定向
+ })
+ //console.info(body)
+ s.reply(body)
