@@ -1,0 +1,16 @@
+/**
+* @author kwxos
+* @version v1.0.0
+ * @create_at 2023-01-13 20:34:49
+* @title 撕了你
+* @rule 撕了 ?
+* @rule 撕了?
+* @description 撕了你
+ * @public false
+*/
+
+s = sender 
+
+var url = s.param(1)
+
+s.reply(`${image("http://ovooa.com/API/si/?QQ=" + url)}`)
