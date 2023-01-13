@@ -1,0 +1,23 @@
+/**
+* @author kwxos
+ * @create_at 2023-01-13 20:43:53
+* @title 翻译
+* @platform qq wx tg pgm web cron
+* @rule 翻译 ?
+* @rule 翻译?
+* @priority 100
+ * @public false
+* @description 翻译文字
+* @version v1.0.0
+*/
+
+//sender
+const s = sender
+
+var par = s.param(1)
+
+var txt = request({
+    url: "http://hm.suol.cc/API/fy.php?msg=" + par,
+}).body
+
+s.reply(txt)
