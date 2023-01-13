@@ -1,0 +1,16 @@
+/**
+* @author kwxos
+* @version v1.0.0
+ * @create_at 2023-01-13 20:38:41
+* @title 可莉吃掉
+* @rule 可莉吃掉 ?
+* @rule 可莉吃掉?
+* @description 可莉吃
+ * @public false
+*/
+
+s = sender 
+
+var url = s.param(1)
+
+s.reply(`${image("http://ovooa.com/API/chi/?QQ=" + url)}`)
