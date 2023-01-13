@@ -11,9 +11,9 @@ const s = sender
 //sillyGirl
 const sillyGirl = new SillyGirl()
 
-s.reply(`重启         test
+s.reply(`重启      当前信息
 命令大全    买家秀
-二次元        笑话
+二次元     来个笑话
 翻译文字：翻译+内容
 可莉吃掉：吃掉+QQ号
 ping测速：ping+网址
