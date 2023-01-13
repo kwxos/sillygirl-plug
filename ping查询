@@ -1,0 +1,24 @@
+/**
+* @author nsv
+ * @origin kwxos
+* @create_at 2023-01-13
+* @title PING查询
+* @platform qq wx tg pgm web cron
+* @rule ping ?
+* @rule ping?
+* @priority 100
+ * @public false
+* @description PING查询
+* @version v1.0.0
+*/
+
+//sender
+const s = sender
+
+var par = s.param(1)
+
+var txt = request({
+    url: "https://ovooa.com/API/ping/?type=text&url=" + par,
+}).body
+
+s.reply(txt)
