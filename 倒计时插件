@@ -1,0 +1,56 @@
+/**
+    * @title 专升本倒计时
+ * @create_at 2023-03-03 21:56:17
+ * @rule 专升本倒计时
+ * @description 🐒这个人很懒什么都没有留下。
+ * @author kwxos
+ * @version v1.0.0
+    * @cron 0 9 * * *
+    */
+
+function main() {
+    var s = sender
+    const sillyGirl = new SillyGirl()
+    s = sillyGirl.newSender({
+        platform: "qq",
+        user_id: "你的QQ号",
+        chat_id: "群号"
+    })
+
+    var {body} = request({
+    url:"https://api.vvhan.com/api/ian",
+    method:"get",
+    allowredirects: false,})
+
+    var text = request({
+        url: "https://xiaoapi.cn/API/fy.php?msg=" + `${body}`,
+    }).body
+
+    countdownDate = new Date('2023-05-06T00:00:00').getTime();
+    countdownDate1 = new Date('2023-03-12T00:00:00').getTime();
+    countdownDate2 = new Date('2023-04-13T00:00:00').getTime();
+    countdownDate3 = new Date('2023-03-25T00:00:00').getTime();
+
+    now = new Date().getTime();
+    timeDiff = countdownDate - now;
+    timeDiff1 = countdownDate1 - now;
+    timeDiff2 = countdownDate2 - now;
+    timeDiff3 = countdownDate3 - now;
+    // 计算剩余的天、小时、分钟和秒数
+    days = Math.floor(timeDiff / (24 * 60 * 60 * 1000));
+    hours = Math.floor((timeDiff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    days1 = Math.floor(timeDiff1 / (24 * 60 * 60 * 1000));
+    hours1 = Math.floor((timeDiff1 % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    days2 = Math.floor(timeDiff2 / (24 * 60 * 60 * 1000));
+    hours2 = Math.floor((timeDiff2 % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    days3 = Math.floor(timeDiff3 / (24 * 60 * 60 * 1000));
+    hours3 = Math.floor((timeDiff3 % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    // minutes = Math.floor((timeDiff % (60 * 60 * 1000)) / (60 * 1000));
+    // seconds = Math.floor((timeDiff % (60 * 1000)) / 1000);
+
+    // 更新倒计时的显示
+    const countdown = `距离专升本仅有：${days}天 ${hours}小时 \n距离四级仅有：${days1}天 ${hours1}小时 \n距离普通话仅有：${days2}天 ${hours2}小时 \n距离网络三级仅有：${days3}天 ${hours3}小时 \n${image("自己放图片链接")}\n每日一言：${body} \n`;
+    s.reply(countdown + "英翻：" + text);
+}
+
+main()
