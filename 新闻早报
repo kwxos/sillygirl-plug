@@ -1,0 +1,28 @@
+/**
+    * @title 新闻早报
+ * @create_at 2023-03-03 21:56:17
+ * @rule 新闻早报
+ * @description 🐒这个人很懒什么都没有留下。
+ * @author kwxos
+ * @version v1.0.0
+    * @cron 10 8 * * *
+    */
+
+//sender
+const s = sender
+const sillyGirl = new SillyGirl()
+
+var ele = "https://api.vvhan.com/api/60s";
+//图文消息
+var content = image(ele) + "今日新闻早报来咯";
+    var groups = [{
+        platform: "qq",
+        user_id: "1318680065",
+    }/*,{
+         platform: "wx",
+        chatId: "18279072615",
+    }*/]
+    for (var i = 0; i < groups.length; i++) {
+        groups[i]["content"] = content
+        sillyGirl.push(groups[i])
+    }
